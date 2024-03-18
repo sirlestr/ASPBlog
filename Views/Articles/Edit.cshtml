@@ -1,0 +1,102 @@
+﻿@model ASPBlog.Models.Article
+
+@{
+    ViewData["Title"] = "Upravit";
+}
+
+
+<p>
+<form class="d-flex flex-column gap-2" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Title" class="form-label">Titulek</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div> 
+    <div class="form-group">
+        <label asp-for="Description" class="form-label">Popis</label>
+        <textarea asp-for="Description" class="form-control" ></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Content" class="form-label">Obsah</label>
+        <textarea asp-for="Content" class="form-control" ></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="clanky-tlacitko" >Uložit</button>
+    </div>
+    <input type="hidden" asp-for="Id" />
+</form>
+</p>
+
+<a class="clanky-tlacitko" asp-action="Index">Zpět na seznam</a>
+
+@section Scripts
+{
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.3/tinymce.min.js"></script>
+    <script src="~/js/initTinyMCE.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
